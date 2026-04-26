@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
+import GlobalStyles from '~/components/GlobalStyles';
+import { BrowserRouter } from 'react-router';
+import { DefaultLayout } from './components/Layout';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <GlobalStyles>
+        <App />
+      </GlobalStyles>
+    </BrowserRouter>
   </StrictMode>,
-)
+);
